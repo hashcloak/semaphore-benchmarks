@@ -58,7 +58,8 @@ yarn ts-node src/verify-proof.ts
 Gatecounts from `gatecount`. 
 
 Version details:
-- `nargo 
+- `nargo version = 1.0.0-beta.3`
+- `bb 0.72.1`
 
 | MAX_DEPTH | acir_opcodes | circuit_size |
 |-----------|--------------|--------------|
