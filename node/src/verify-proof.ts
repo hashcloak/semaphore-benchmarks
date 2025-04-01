@@ -1,10 +1,8 @@
 import { Bench, Task } from "tinybench"
-import { Identity } from "@semaphore-protocol/identity"
-import { Group } from "@semaphore-protocol/group"
 import {
-  generateProof,
-  verifyProof,
-  SemaphoreProof
+  generateNoirProof,
+  verifyNoirProof,
+  SemaphoreNoirProof
 } from "@semaphore-protocol/proof"
 import * as V4 from "@semaphore-protocol/core"
 
@@ -30,13 +28,6 @@ async function main() {
 
   const bench = new Bench()
 
-  const generateMembersV3 = (size: number) => {
-    return Array.from(
-      { length: size },
-      (_, i) => new Identity(i.toString())
-    ).map(({ commitment }) => commitment)
-  }
-
   const generateMembersV4 = (size: number) => {
     return Array.from(
       { length: size },
@@ -44,76 +35,33 @@ async function main() {
     ).map(({ commitment }) => commitment)
   }
 
-  let memberV3: Identity
-
   let memberV4: V4.Identity
-
-  let groupV3: Group
 
   let groupV4: V4.Group
 
-  let membersV3: bigint[]
-
   let membersV4: bigint[]
 
-  let proofV3: SemaphoreProof
-
-  let proofV4: V4.SemaphoreProof
+  let proofV4: SemaphoreNoirProof
 
   bench
     .add(
-      "V3 - Verify Proof 1 Member",
-      async () => {
-        await verifyProof(proofV3, groupV3.depth)
-      },
-      {
-        beforeAll: async () => {
-          groupV3 = new Group(1, 16, [])
-          memberV3 = new Identity()
-          groupV3.addMember(memberV3.commitment)
-          proofV3 = await generateProof(memberV3, groupV3, 1, 1, {
-            zkeyFilePath: "./v3-snark-artifacts/16/semaphore.zkey",
-            wasmFilePath: "./v3-snark-artifacts/16/semaphore.wasm"
-          })
-        }
-      }
-    )
-    .add(
       "V4 - Verify Proof 1 Member",
       async () => {
-        await V4.verifyProof(proofV4)
+        await verifyNoirProof(proofV4, "./compiled_noir_circuit/semaphore-noir-16.json")
       },
       {
         beforeAll: async () => {
           groupV4 = new V4.Group([])
           memberV4 = new V4.Identity()
           groupV4.addMember(memberV4.commitment)
-          proofV4 = await V4.generateProof(memberV4, groupV4, 1, 1)
-        }
-      }
-    )
-    .add(
-      "V3 - Verify Proof 100 Members",
-      async () => {
-        await verifyProof(proofV3, groupV3.depth)
-      },
-      {
-        beforeAll: async () => {
-          membersV3 = generateMembersV3(100)
-          groupV3 = new Group(1, 16, membersV3)
-          const index = Math.floor(membersV3.length / 2)
-          memberV3 = new Identity(index.toString())
-          proofV3 = await generateProof(memberV3, groupV3, 1, 1, {
-            zkeyFilePath: "./v3-snark-artifacts/16/semaphore.zkey",
-            wasmFilePath: "./v3-snark-artifacts/16/semaphore.wasm"
-          })
+          proofV4 = await generateNoirProof(memberV4, groupV4, 1, 1, 16, "./compiled_noir_circuit/semaphore-noir-16.json")
         }
       }
     )
     .add(
       "V4 - Verify Proof 100 Members",
       async () => {
-        await V4.verifyProof(proofV4)
+        await verifyNoirProof(proofV4, "./compiled_noir_circuit/semaphore-noir-16.json")
       },
       {
         beforeAll: async () => {
@@ -121,32 +69,14 @@ async function main() {
           groupV4 = new V4.Group(membersV4)
           const index = Math.floor(membersV4.length / 2)
           memberV4 = new V4.Identity(index.toString())
-          proofV4 = await V4.generateProof(memberV4, groupV4, 1, 1)
-        }
-      }
-    )
-    .add(
-      "V3 - Verify Proof 500 Members",
-      async () => {
-        await verifyProof(proofV3, groupV3.depth)
-      },
-      {
-        beforeAll: async () => {
-          membersV3 = generateMembersV3(500)
-          groupV3 = new Group(1, 16, membersV3)
-          const index = Math.floor(membersV3.length / 2)
-          memberV3 = new Identity(index.toString())
-          proofV3 = await generateProof(memberV3, groupV3, 1, 1, {
-            zkeyFilePath: "./v3-snark-artifacts/16/semaphore.zkey",
-            wasmFilePath: "./v3-snark-artifacts/16/semaphore.wasm"
-          })
+          proofV4 = await generateNoirProof(memberV4, groupV4, 1, 1, 16, "./compiled_noir_circuit/semaphore-noir-16.json")
         }
       }
     )
     .add(
       "V4 - Verify Proof 500 Members",
       async () => {
-        await V4.verifyProof(proofV4)
+        await verifyNoirProof(proofV4, "./compiled_noir_circuit/semaphore-noir-16.json")
       },
       {
         beforeAll: async () => {
@@ -154,32 +84,14 @@ async function main() {
           groupV4 = new V4.Group(membersV4)
           const index = Math.floor(membersV4.length / 2)
           memberV4 = new V4.Identity(index.toString())
-          proofV4 = await V4.generateProof(memberV4, groupV4, 1, 1)
-        }
-      }
-    )
-    .add(
-      "V3 - Verify Proof 1000 Members",
-      async () => {
-        await verifyProof(proofV3, groupV3.depth)
-      },
-      {
-        beforeAll: async () => {
-          membersV3 = generateMembersV3(1000)
-          groupV3 = new Group(1, 16, membersV3)
-          const index = Math.floor(membersV3.length / 2)
-          memberV3 = new Identity(index.toString())
-          proofV3 = await generateProof(memberV3, groupV3, 1, 1, {
-            zkeyFilePath: "./v3-snark-artifacts/16/semaphore.zkey",
-            wasmFilePath: "./v3-snark-artifacts/16/semaphore.wasm"
-          })
+          proofV4 = await generateNoirProof(memberV4, groupV4, 1, 1, 16, "./compiled_noir_circuit/semaphore-noir-16.json")
         }
       }
     )
     .add(
       "V4 - Verify Proof 1000 Members",
       async () => {
-        await V4.verifyProof(proofV4)
+        await verifyNoirProof(proofV4, "./compiled_noir_circuit/semaphore-noir-16.json")
       },
       {
         beforeAll: async () => {
@@ -187,32 +99,14 @@ async function main() {
           groupV4 = new V4.Group(membersV4)
           const index = Math.floor(membersV4.length / 2)
           memberV4 = new V4.Identity(index.toString())
-          proofV4 = await V4.generateProof(memberV4, groupV4, 1, 1)
-        }
-      }
-    )
-    .add(
-      "V3 - Verify Proof 2000 Members",
-      async () => {
-        await verifyProof(proofV3, groupV3.depth)
-      },
-      {
-        beforeAll: async () => {
-          membersV3 = generateMembersV3(2000)
-          groupV3 = new Group(1, 16, membersV3)
-          const index = Math.floor(membersV3.length / 2)
-          memberV3 = new Identity(index.toString())
-          proofV3 = await generateProof(memberV3, groupV3, 1, 1, {
-            zkeyFilePath: "./v3-snark-artifacts/16/semaphore.zkey",
-            wasmFilePath: "./v3-snark-artifacts/16/semaphore.wasm"
-          })
+          proofV4 = await generateNoirProof(memberV4, groupV4, 1, 1, 16, "./compiled_noir_circuit/semaphore-noir-16.json")
         }
       }
     )
     .add(
       "V4 - Verify Proof 2000 Members",
       async () => {
-        await V4.verifyProof(proofV4)
+        await verifyNoirProof(proofV4, "./compiled_noir_circuit/semaphore-noir-16.json")
       },
       {
         beforeAll: async () => {
@@ -220,7 +114,7 @@ async function main() {
           groupV4 = new V4.Group(membersV4)
           const index = Math.floor(membersV4.length / 2)
           memberV4 = new V4.Identity(index.toString())
-          proofV4 = await V4.generateProof(memberV4, groupV4, 1, 1)
+          proofV4 = await generateNoirProof(memberV4, groupV4, 1, 1, 16, "./compiled_noir_circuit/semaphore-noir-16.json")
         }
       }
     )
@@ -229,31 +123,6 @@ async function main() {
   await bench.run()
 
   const table = bench.table((task) => generateTable(task))
-
-  // Add column to show how many times V4 is faster/slower than V3.
-  // Formula: highest average execution time divided by lowest average execution time.
-  // Using highest ops/sec divided by lowest ops/sec would work too.
-  table.map((rowInfo, i) => {
-    if (rowInfo && !(rowInfo["Function"] as string).includes("V4")) {
-      rowInfo["Relative to V3"] = ""
-    } else if (rowInfo) {
-      const v3AvgExecTime = bench.tasks[i - 1].result?.mean
-
-      const v4AvgExecTime = bench.tasks[i]!.result?.mean
-
-      if (v3AvgExecTime === undefined || v4AvgExecTime === undefined) return
-
-      if (v3AvgExecTime > v4AvgExecTime) {
-        rowInfo["Relative to V3"] = `${(v3AvgExecTime / v4AvgExecTime).toFixed(
-          2
-        )} x faster`
-      } else {
-        rowInfo["Relative to V3"] = `${(v4AvgExecTime / v3AvgExecTime).toFixed(
-          2
-        )} x slower`
-      }
-    }
-  })
 
   console.table(table)
 
