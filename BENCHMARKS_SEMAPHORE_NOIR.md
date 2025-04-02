@@ -12,46 +12,50 @@ Machine details:
 
 ### Proof generation
 
-| Function                          | ops/sec | Average Time (ms) | Samples |
-|----------------------------------|---------|--------------------|---------|
-| V4 - Generate Proof 1 Member     | 0       | 5816.07017         | 10      |
-| V4 - Generate Proof 100 Members  | 0       | 6556.82484         | 10      |
-| V4 - Generate Proof 500 Members  | 0       | 5903.60153         | 10      |
-| V4 - Generate Proof 1000 Members | 0       | 5922.14393         | 10      |
-| V4 - Generate Proof 2000 Members | 0       | 6011.40565         | 10      |
+| Index | Function                           | ops/sec | Average Time (ms) | Samples |
+|-------|------------------------------------|---------|-------------------|---------|
+| 0     | V4 - Generate Proof 1 Member       | 0       | 3404.13355        | 10      |
+| 1     | V4 - Generate Proof 100 Members    | 0       | 3619.20440        | 10      |
+| 2     | V4 - Generate Proof 500 Members    | 0       | 3941.64235        | 10      |
+| 3     | V4 - Generate Proof 1000 Members   | 0       | 4250.94885        | 10      |
+| 4     | V4 - Generate Proof 2000 Members   | 0       | 3365.34940        | 10      |
 
-<!-- ┌─────────┬────────────────────────────────────┬─────────┬───────────────────┬─────────┐
+<!-- 
+┌─────────┬────────────────────────────────────┬─────────┬───────────────────┬─────────┐
 │ (index) │              Function              │ ops/sec │ Average Time (ms) │ Samples │
 ├─────────┼────────────────────────────────────┼─────────┼───────────────────┼─────────┤
-│    0    │   'V4 - Generate Proof 1 Member'   │   '0'   │   '5816.07017'    │   10    │
-│    1    │ 'V4 - Generate Proof 100 Members'  │   '0'   │   '6556.82484'    │   10    │
-│    2    │ 'V4 - Generate Proof 500 Members'  │   '0'   │   '5903.60153'    │   10    │
-│    3    │ 'V4 - Generate Proof 1000 Members' │   '0'   │   '5922.14393'    │   10    │
-│    4    │ 'V4 - Generate Proof 2000 Members' │   '0'   │   '6011.40565'    │   10    │
-└─────────┴────────────────────────────────────┴─────────┴───────────────────┴─────────┘ -->
+│    0    │   'V4 - Generate Proof 1 Member'   │   '0'   │   '3404.13355'    │   10    │
+│    1    │ 'V4 - Generate Proof 100 Members'  │   '0'   │   '3619.20440'    │   10    │
+│    2    │ 'V4 - Generate Proof 500 Members'  │   '0'   │   '3941.64235'    │   10    │
+│    3    │ 'V4 - Generate Proof 1000 Members' │   '0'   │   '4250.94885'    │   10    │
+│    4    │ 'V4 - Generate Proof 2000 Members' │   '0'   │   '3365.34940'    │   10    │
+└─────────┴────────────────────────────────────┴─────────┴───────────────────┴─────────┘
+ -->
 
 ### Proof verification
 ```
 yarn ts-node src/verify-proof.ts
 ```
 
-| Function                        | ops/sec | Average Time (ms) | Samples |
-|--------------------------------|---------|--------------------|---------|
-| V4 - Verify Proof 1 Member     | 0       | 3188.09994         | 10      |
-| V4 - Verify Proof 100 Members  | 0       | 3339.89342         | 10      |
-| V4 - Verify Proof 500 Members  | 0       | 3472.35484         | 10      |
-| V4 - Verify Proof 1000 Members | 0       | 3120.28104         | 10      |
-| V4 - Verify Proof 2000 Members | 0       | 3566.91801         | 10      |
+| Index | Function                          | ops/sec | Average Time (ms) | Samples |
+|-------|-----------------------------------|---------|-------------------|---------|
+| 0     | V4 - Verify Proof 1 Member        | 0       | 2291.92979        | 10      |
+| 1     | V4 - Verify Proof 100 Members     | 0       | 2612.80793        | 10      |
+| 2     | V4 - Verify Proof 500 Members     | 0       | 2697.91083        | 10      |
+| 3     | V4 - Verify Proof 1000 Members    | 0       | 2655.66493        | 10      |
+| 4     | V4 - Verify Proof 2000 Members    | 0       | 2371.97416        | 10      |
 
-<!-- ┌─────────┬──────────────────────────────────┬─────────┬───────────────────┬─────────┐
+<!-- 
+┌─────────┬──────────────────────────────────┬─────────┬───────────────────┬─────────┐
 │ (index) │             Function             │ ops/sec │ Average Time (ms) │ Samples │
 ├─────────┼──────────────────────────────────┼─────────┼───────────────────┼─────────┤
-│    0    │   'V4 - Verify Proof 1 Member'   │   '0'   │   '3188.09994'    │   10    │
-│    1    │ 'V4 - Verify Proof 100 Members'  │   '0'   │   '3339.89342'    │   10    │
-│    2    │ 'V4 - Verify Proof 500 Members'  │   '0'   │   '3472.35484'    │   10    │
-│    3    │ 'V4 - Verify Proof 1000 Members' │   '0'   │   '3120.28104'    │   10    │
-│    4    │ 'V4 - Verify Proof 2000 Members' │   '0'   │   '3566.91801'    │   10    │
-└─────────┴──────────────────────────────────┴─────────┴───────────────────┴─────────┘ -->
+│    0    │   'V4 - Verify Proof 1 Member'   │   '0'   │   '2291.92979'    │   10    │
+│    1    │ 'V4 - Verify Proof 100 Members'  │   '0'   │   '2612.80793'    │   10    │
+│    2    │ 'V4 - Verify Proof 500 Members'  │   '0'   │   '2697.91083'    │   10    │
+│    3    │ 'V4 - Verify Proof 1000 Members' │   '0'   │   '2655.66493'    │   10    │
+│    4    │ 'V4 - Verify Proof 2000 Members' │   '0'   │   '2371.97416'    │   10    │
+└─────────┴──────────────────────────────────┴─────────┴───────────────────┴─────────┘
+ -->
 
 ## Circuit
 
