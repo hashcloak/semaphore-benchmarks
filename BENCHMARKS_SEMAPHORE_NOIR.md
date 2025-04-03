@@ -1,5 +1,9 @@
 # Benchmarks - NOIR SEMAPHORE
 
+Version details:
+- `nargo version = 1.0.0-beta.3`
+- `bb 0.82.2`
+
 ## SDK 
 
 Benchmarks from `node`. 
@@ -12,23 +16,23 @@ Machine details:
 
 ### Proof generation
 
-| Index | Function                           | ops/sec | Average Time (ms) | Samples |
-|-------|------------------------------------|---------|-------------------|---------|
-| 0     | V4 - Generate Proof 1 Member       | 0       | 3404.13355        | 10      |
-| 1     | V4 - Generate Proof 100 Members    | 0       | 3619.20440        | 10      |
-| 2     | V4 - Generate Proof 500 Members    | 0       | 3941.64235        | 10      |
-| 3     | V4 - Generate Proof 1000 Members   | 0       | 4250.94885        | 10      |
-| 4     | V4 - Generate Proof 2000 Members   | 0       | 3365.34940        | 10      |
+| Index | Function                          | ops/sec | Average Time (ms) | Samples |
+|-------|-----------------------------------|---------|-------------------|---------|
+| 0     | V4 - Generate Proof 1 Member      | 0       | 3288.52276        | 10      |
+| 1     | V4 - Generate Proof 100 Members   | 0       | 3359.34525        | 10      |
+| 2     | V4 - Generate Proof 500 Members   | 0       | 3364.70119        | 10      |
+| 3     | V4 - Generate Proof 1000 Members  | 0       | 3429.30224        | 10      |
+| 4     | V4 - Generate Proof 2000 Members  | 0       | 4709.12503        | 10      |
 
 <!-- 
 ┌─────────┬────────────────────────────────────┬─────────┬───────────────────┬─────────┐
 │ (index) │              Function              │ ops/sec │ Average Time (ms) │ Samples │
 ├─────────┼────────────────────────────────────┼─────────┼───────────────────┼─────────┤
-│    0    │   'V4 - Generate Proof 1 Member'   │   '0'   │   '3404.13355'    │   10    │
-│    1    │ 'V4 - Generate Proof 100 Members'  │   '0'   │   '3619.20440'    │   10    │
-│    2    │ 'V4 - Generate Proof 500 Members'  │   '0'   │   '3941.64235'    │   10    │
-│    3    │ 'V4 - Generate Proof 1000 Members' │   '0'   │   '4250.94885'    │   10    │
-│    4    │ 'V4 - Generate Proof 2000 Members' │   '0'   │   '3365.34940'    │   10    │
+│    0    │   'V4 - Generate Proof 1 Member'   │   '0'   │   '3288.52276'    │   10    │
+│    1    │ 'V4 - Generate Proof 100 Members'  │   '0'   │   '3359.34525'    │   10    │
+│    2    │ 'V4 - Generate Proof 500 Members'  │   '0'   │   '3364.70119'    │   10    │
+│    3    │ 'V4 - Generate Proof 1000 Members' │   '0'   │   '3429.30224'    │   10    │
+│    4    │ 'V4 - Generate Proof 2000 Members' │   '0'   │   '4709.12503'    │   10    │
 └─────────┴────────────────────────────────────┴─────────┴───────────────────┴─────────┘
  -->
 
@@ -37,33 +41,29 @@ Machine details:
 yarn ts-node src/verify-proof.ts
 ```
 
-| Index | Function                          | ops/sec | Average Time (ms) | Samples |
-|-------|-----------------------------------|---------|-------------------|---------|
-| 0     | V4 - Verify Proof 1 Member        | 0       | 2291.92979        | 10      |
-| 1     | V4 - Verify Proof 100 Members     | 0       | 2612.80793        | 10      |
-| 2     | V4 - Verify Proof 500 Members     | 0       | 2697.91083        | 10      |
-| 3     | V4 - Verify Proof 1000 Members    | 0       | 2655.66493        | 10      |
-| 4     | V4 - Verify Proof 2000 Members    | 0       | 2371.97416        | 10      |
+| Index | Function                         | ops/sec | Average Time (ms) | Samples |
+|-------|----------------------------------|---------|-------------------|---------|
+| 0     | V4 - Verify Proof 1 Member       | 0       | 2194.76763        | 10      |
+| 1     | V4 - Verify Proof 100 Members    | 0       | 2684.74440        | 10      |
+| 2     | V4 - Verify Proof 500 Members    | 0       | 2719.95515        | 10      |
+| 3     | V4 - Verify Proof 1000 Members   | 0       | 2789.63888        | 10      |
+| 4     | V4 - Verify Proof 2000 Members   | 0       | 2794.99093        | 10      |
 
 <!-- 
 ┌─────────┬──────────────────────────────────┬─────────┬───────────────────┬─────────┐
 │ (index) │             Function             │ ops/sec │ Average Time (ms) │ Samples │
 ├─────────┼──────────────────────────────────┼─────────┼───────────────────┼─────────┤
-│    0    │   'V4 - Verify Proof 1 Member'   │   '0'   │   '2291.92979'    │   10    │
-│    1    │ 'V4 - Verify Proof 100 Members'  │   '0'   │   '2612.80793'    │   10    │
-│    2    │ 'V4 - Verify Proof 500 Members'  │   '0'   │   '2697.91083'    │   10    │
-│    3    │ 'V4 - Verify Proof 1000 Members' │   '0'   │   '2655.66493'    │   10    │
-│    4    │ 'V4 - Verify Proof 2000 Members' │   '0'   │   '2371.97416'    │   10    │
+│    0    │   'V4 - Verify Proof 1 Member'   │   '0'   │   '2194.76763'    │   10    │
+│    1    │ 'V4 - Verify Proof 100 Members'  │   '0'   │   '2684.74440'    │   10    │
+│    2    │ 'V4 - Verify Proof 500 Members'  │   '0'   │   '2719.95515'    │   10    │
+│    3    │ 'V4 - Verify Proof 1000 Members' │   '0'   │   '2789.63888'    │   10    │
+│    4    │ 'V4 - Verify Proof 2000 Members' │   '0'   │   '2794.99093'    │   10    │
 └─────────┴──────────────────────────────────┴─────────┴───────────────────┴─────────┘
  -->
 
 ## Circuit
 
 Gatecounts from `gatecount`. 
-
-Version details:
-- `nargo version = 1.0.0-beta.3`
-- `bb 0.72.1`
 
 | MAX_DEPTH | acir_opcodes | circuit_size |
 |-----------|--------------|--------------|
