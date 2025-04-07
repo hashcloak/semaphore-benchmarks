@@ -1,6 +1,9 @@
 import { Bench, Task } from "tinybench"
 import { generateNoirProof } from "@semaphore-protocol/proof"
 import * as V4 from "@semaphore-protocol/core"
+import { CompiledCircuit } from '@noir-lang/noir_js'
+import { promises as fs } from 'fs'
+import os from "os"
 
 const generateTable = (task: Task) => {
   if (task && task.name && task.result) {
@@ -18,9 +21,6 @@ const generateTable = (task: Task) => {
 }
 
 async function main() {
-  //   const samples = 100
-
-  //   const bench = new Bench({ time: 0, iterations: samples })
 
   const bench = new Bench()
 
@@ -37,11 +37,15 @@ async function main() {
 
   let membersV4: bigint[]
 
+  const outputPath = './compiled_noir_circuit/semaphore-noir-16.json'
+  const file = await fs.readFile(outputPath, 'utf-8')
+  const compiledCircuit = JSON.parse(file) as CompiledCircuit
+
   bench
     .add(
       "V4 - Generate Proof 1 Member",
       async () => {
-        await generateNoirProof(memberV4, groupV4, 1, 1, 16, "./compiled_noir_circuit/semaphore-noir-16.json")
+        await generateNoirProof(memberV4, groupV4, 1, 1, 16, compiledCircuit, os.cpus().length)
       },
       {
         beforeAll: () => {
@@ -54,7 +58,7 @@ async function main() {
     .add(
       "V4 - Generate Proof 100 Members",
       async () => {
-        await generateNoirProof(memberV4, groupV4, 1, 1, 16, "./compiled_noir_circuit/semaphore-noir-16.json")
+        await generateNoirProof(memberV4, groupV4, 1, 1, 16, compiledCircuit, os.cpus().length)
       },
       {
         beforeAll: () => {
@@ -68,7 +72,7 @@ async function main() {
     .add(
       "V4 - Generate Proof 500 Members",
       async () => {
-        await generateNoirProof(memberV4, groupV4, 1, 1, 16, "./compiled_noir_circuit/semaphore-noir-16.json")
+        await generateNoirProof(memberV4, groupV4, 1, 1, 16, compiledCircuit, os.cpus().length)
       },
       {
         beforeAll: () => {
@@ -82,7 +86,7 @@ async function main() {
     .add(
       "V4 - Generate Proof 1000 Members",
       async () => {
-        await generateNoirProof(memberV4, groupV4, 1, 1, 16, "./compiled_noir_circuit/semaphore-noir-16.json")
+        await generateNoirProof(memberV4, groupV4, 1, 1, 16, compiledCircuit, os.cpus().length)
       },
       {
         beforeAll: () => {
@@ -96,7 +100,7 @@ async function main() {
     .add(
       "V4 - Generate Proof 2000 Members",
       async () => {
-        await generateNoirProof(memberV4, groupV4, 1, 1, 16, "./compiled_noir_circuit/semaphore-noir-16.json")
+        await generateNoirProof(memberV4, groupV4, 1, 1, 16, compiledCircuit, os.cpus().length)
       },
       {
         beforeAll: () => {
@@ -114,8 +118,6 @@ async function main() {
   const table = bench.table((task) => generateTable(task))
 
   console.table(table)
-
-  // console.log(bench.results)
 }
 
 main()
