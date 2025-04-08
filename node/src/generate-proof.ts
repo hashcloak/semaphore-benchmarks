@@ -1,8 +1,6 @@
 import { Bench, Task } from "tinybench"
 import { generateNoirProof } from "@semaphore-protocol/proof"
 import * as V4 from "@semaphore-protocol/core"
-import { CompiledCircuit } from '@noir-lang/noir_js'
-import { promises as fs } from 'fs'
 import os from "os"
 
 const generateTable = (task: Task) => {
@@ -37,15 +35,11 @@ async function main() {
 
   let membersV4: bigint[]
 
-  const outputPath = './compiled_noir_circuit/semaphore-noir-16.json'
-  const file = await fs.readFile(outputPath, 'utf-8')
-  const compiledCircuit = JSON.parse(file) as CompiledCircuit
-
   bench
     .add(
-      "V4 - Generate Proof 1 Member",
+      "Generate Proof 1 Member [Max tree depth 1]",
       async () => {
-        await generateNoirProof(memberV4, groupV4, 1, 1, 16, compiledCircuit, os.cpus().length)
+        await generateNoirProof(memberV4, groupV4, 1, 1, undefined, undefined, os.cpus().length)
       },
       {
         beforeAll: () => {
@@ -56,9 +50,9 @@ async function main() {
       }
     )
     .add(
-      "V4 - Generate Proof 100 Members",
+      "Generate Proof 100 Members [Max tree depth 7]",
       async () => {
-        await generateNoirProof(memberV4, groupV4, 1, 1, 16, compiledCircuit, os.cpus().length)
+        await generateNoirProof(memberV4, groupV4, 1, 1, undefined, undefined, os.cpus().length)
       },
       {
         beforeAll: () => {
@@ -70,9 +64,9 @@ async function main() {
       }
     )
     .add(
-      "V4 - Generate Proof 500 Members",
+      "Generate Proof 500 Members [Max tree depth 9]",
       async () => {
-        await generateNoirProof(memberV4, groupV4, 1, 1, 16, compiledCircuit, os.cpus().length)
+        await generateNoirProof(memberV4, groupV4, 1, 1, undefined, undefined, os.cpus().length)
       },
       {
         beforeAll: () => {
@@ -84,9 +78,9 @@ async function main() {
       }
     )
     .add(
-      "V4 - Generate Proof 1000 Members",
+      "Generate Proof 1000 Members [Max tree depth 10]",
       async () => {
-        await generateNoirProof(memberV4, groupV4, 1, 1, 16, compiledCircuit, os.cpus().length)
+        await generateNoirProof(memberV4, groupV4, 1, 1, undefined, undefined, os.cpus().length)
       },
       {
         beforeAll: () => {
@@ -98,9 +92,9 @@ async function main() {
       }
     )
     .add(
-      "V4 - Generate Proof 2000 Members",
+      "Generate Proof 2000 Members [Max tree depth 11]",
       async () => {
-        await generateNoirProof(memberV4, groupV4, 1, 1, 16, compiledCircuit, os.cpus().length)
+        await generateNoirProof(memberV4, groupV4, 1, 1, undefined, undefined, os.cpus().length)
       },
       {
         beforeAll: () => {

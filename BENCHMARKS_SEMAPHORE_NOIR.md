@@ -16,52 +16,26 @@ Machine details:
 
 ### Proof generation
 
-| Function                         | ops/sec | Average Time (ms) | Samples |
-|----------------------------------|---------|-------------------|---------|
-| 1                                | 0       | 2960.77124        | 10      |
-| V4 - Generate Proof 100 Members  | 0       | 3017.23437        | 10      |
-| V4 - Generate Proof 500 Members  | 0       | 3268.89607        | 10      |
-| V4 - Generate Proof 1000 Members | 0       | 3327.22178        | 10      |
-| V4 - Generate Proof 2000 Members | 0       | 3249.86986        | 10      |
-
-<!-- 
-┌─────────┬────────────────────────────────────┬─────────┬───────────────────┬─────────┐
-│ (index) │              Function              │ ops/sec │ Average Time (ms) │ Samples │
-├─────────┼────────────────────────────────────┼─────────┼───────────────────┼─────────┤
-│    0    │                '1'                 │   '0'   │   '2960.77124'    │   10    │
-│    1    │ 'V4 - Generate Proof 100 Members'  │   '0'   │   '3017.23437'    │   10    │
-│    2    │ 'V4 - Generate Proof 500 Members'  │   '0'   │   '3268.89607'    │   10    │
-│    3    │ 'V4 - Generate Proof 1000 Members' │   '0'   │   '3327.22178'    │   10    │
-│    4    │ 'V4 - Generate Proof 2000 Members' │   '0'   │   '3249.86986'    │   10    │
-└─────────┴────────────────────────────────────┴─────────┴───────────────────┴─────────┘
- -->
-
-
+| Index | Function                                            | ops/sec | Average Time (ms) | Samples |
+|-------|-----------------------------------------------------|---------|-------------------|---------|
+| 0     | Generate Proof 1 Member [Max tree depth 1]          | 0       | 1370.01822        | 10      |
+| 1     | Generate Proof 100 Members [Max tree depth 7]       | 0       | 2211.34649        | 10      |
+| 2     | Generate Proof 500 Members [Max tree depth 9]       | 0       | 2457.06099        | 10      |
+| 3     | Generate Proof 1000 Members [Max tree depth 10]     | 0       | 2481.54167        | 10      |
+| 4     | Generate Proof 2000 Members [Max tree depth 11]     | 0       | 2770.78957        | 10      |
 
 ### Proof verification
 ```
 yarn ts-node src/verify-proof.ts
 ```
 
-| Function                      | ops/sec | Average Time (ms) | Samples |
-|------------------------------|---------|-------------------|---------|
-| V4 - Verify Proof 1 Member   | 0       | 3057.36956        | 10      |
-| V4 - Verify Proof 100 Members| 0       | 3052.93062        | 10      |
-| V4 - Verify Proof 500 Members| 0       | 3044.61323        | 10      |
-| V4 - Verify Proof 1000 Members| 0      | 3044.45844        | 10      |
-| V4 - Verify Proof 2000 Members| 0      | 3077.06097        | 10      |
-
-<!-- 
-┌─────────┬──────────────────────────────────┬─────────┬───────────────────┬─────────┐
-│ (index) │             Function             │ ops/sec │ Average Time (ms) │ Samples │
-├─────────┼──────────────────────────────────┼─────────┼───────────────────┼─────────┤
-│    0    │   'V4 - Verify Proof 1 Member'   │   '0'   │   '3057.36956'    │   10    │
-│    1    │ 'V4 - Verify Proof 100 Members'  │   '0'   │   '3052.93062'    │   10    │
-│    2    │ 'V4 - Verify Proof 500 Members'  │   '0'   │   '3044.61323'    │   10    │
-│    3    │ 'V4 - Verify Proof 1000 Members' │   '0'   │   '3044.45844'    │   10    │
-│    4    │ 'V4 - Verify Proof 2000 Members' │   '0'   │   '3077.06097'    │   10    │
-└─────────┴──────────────────────────────────┴─────────┴───────────────────┴─────────┘
- -->
+| Index | Function                                         | ops/sec | Average Time (ms) | Samples |
+|-------|--------------------------------------------------|---------|-------------------|---------|
+| 0     | Verify Proof 1 Member [Max tree depth 1]         | 1       | 933.05125         | 10      |
+| 1     | Verify Proof 100 Members [Max tree depth 7]      | 0       | 1798.74448        | 10      |
+| 2     | Verify Proof 500 Members [Max tree depth 9]      | 0       | 1995.11173        | 10      |
+| 3     | Verify Proof 1000 Members [Max tree depth 10]    | 0       | 2092.08427        | 10      |
+| 4     | Verify Proof 2000 Members [Max tree depth 11]    | 0       | 2203.38747        | 10      |
 
 ## Circuit
 
@@ -140,5 +114,4 @@ Gatecounts from `gatecount`.
  -->
 
 ## Browser
-
-![Browser benchmarks](Browser_benches.png)
+TODO

@@ -5,8 +5,6 @@ import {
   SemaphoreNoirProof
 } from "@semaphore-protocol/proof"
 import * as V4 from "@semaphore-protocol/core"
-import { CompiledCircuit } from '@noir-lang/noir_js'
-import { promises as fs } from 'fs'
 import os from "os"
 
 const generateTable = (task: Task) => {
@@ -43,29 +41,25 @@ async function main() {
 
   let proofV4: SemaphoreNoirProof
 
-  const outputPath = './compiled_noir_circuit/semaphore-noir-16.json'
-  const file = await fs.readFile(outputPath, 'utf-8')
-  const compiledCircuit = JSON.parse(file) as CompiledCircuit
-
   bench
     .add(
-      "V4 - Verify Proof 1 Member",
+      "Verify Proof 1 Member [Max tree depth 1]",
       async () => {
-        await verifyNoirProof(proofV4, compiledCircuit)
+        await verifyNoirProof(proofV4)
       },
       {
         beforeAll: async () => {
           groupV4 = new V4.Group([])
           memberV4 = new V4.Identity()
           groupV4.addMember(memberV4.commitment)
-          proofV4 = await generateNoirProof(memberV4, groupV4, 1, 1, 16, compiledCircuit, os.cpus().length)
+          proofV4 = await generateNoirProof(memberV4, groupV4, 1, 1, undefined, undefined, os.cpus().length)
         }
       }
     )
     .add(
-      "V4 - Verify Proof 100 Members",
+      "Verify Proof 100 Members [Max tree depth 7]",
       async () => {
-        await verifyNoirProof(proofV4, compiledCircuit)
+        await verifyNoirProof(proofV4)
       },
       {
         beforeAll: async () => {
@@ -73,14 +67,14 @@ async function main() {
           groupV4 = new V4.Group(membersV4)
           const index = Math.floor(membersV4.length / 2)
           memberV4 = new V4.Identity(index.toString())
-          proofV4 = await generateNoirProof(memberV4, groupV4, 1, 1, 16, compiledCircuit, os.cpus().length)
+          proofV4 = await generateNoirProof(memberV4, groupV4, 1, 1, undefined, undefined, os.cpus().length)
         }
       }
     )
     .add(
-      "V4 - Verify Proof 500 Members",
+      "Verify Proof 500 Members [Max tree depth 9]",
       async () => {
-        await verifyNoirProof(proofV4, compiledCircuit)
+        await verifyNoirProof(proofV4)
       },
       {
         beforeAll: async () => {
@@ -88,14 +82,14 @@ async function main() {
           groupV4 = new V4.Group(membersV4)
           const index = Math.floor(membersV4.length / 2)
           memberV4 = new V4.Identity(index.toString())
-          proofV4 = await generateNoirProof(memberV4, groupV4, 1, 1, 16, compiledCircuit, os.cpus().length)
+          proofV4 = await generateNoirProof(memberV4, groupV4, 1, 1, undefined, undefined, os.cpus().length)
         }
       }
     )
     .add(
-      "V4 - Verify Proof 1000 Members",
+      "Verify Proof 1000 Members [Max tree depth 10]",
       async () => {
-        await verifyNoirProof(proofV4, compiledCircuit)
+        await verifyNoirProof(proofV4)
       },
       {
         beforeAll: async () => {
@@ -103,14 +97,14 @@ async function main() {
           groupV4 = new V4.Group(membersV4)
           const index = Math.floor(membersV4.length / 2)
           memberV4 = new V4.Identity(index.toString())
-          proofV4 = await generateNoirProof(memberV4, groupV4, 1, 1, 16, compiledCircuit, os.cpus().length)
+          proofV4 = await generateNoirProof(memberV4, groupV4, 1, 1, undefined, undefined, os.cpus().length)
         }
       }
     )
     .add(
-      "V4 - Verify Proof 2000 Members",
+      "Verify Proof 2000 Members [Max tree depth 11]",
       async () => {
-        await verifyNoirProof(proofV4, compiledCircuit)
+        await verifyNoirProof(proofV4)
       },
       {
         beforeAll: async () => {
@@ -118,7 +112,7 @@ async function main() {
           groupV4 = new V4.Group(membersV4)
           const index = Math.floor(membersV4.length / 2)
           memberV4 = new V4.Identity(index.toString())
-          proofV4 = await generateNoirProof(memberV4, groupV4, 1, 1, 16, compiledCircuit, os.cpus().length)
+          proofV4 = await generateNoirProof(memberV4, groupV4, 1, 1, undefined, undefined, os.cpus().length)
         }
       }
     )
