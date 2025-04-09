@@ -1,6 +1,6 @@
 import { Bench, Task } from "tinybench"
 import * as V4 from "@semaphore-protocol/core"
-import { generateNoirProof } from "@semaphore-noir-protocol/proof"
+import { generateNoirProof } from "@semaphore-protocol/proof"
 
 const generateTable = (task: Task) => {
   if (task && task.name && task.result) {
@@ -33,13 +33,12 @@ export async function generateBenchmarks() {
 
   let membersV4: bigint[]
 
-  let v4Identity: V4.Identity
 
   bench
     .add(
       "Noir - Generate Proof 1 Member",
       async () => {
-        await generateNoirProof(memberV4, groupV4, 1, 1, undefined, undefined, { threads: navigator.hardwareConcurrency ?? 1 })
+        await generateNoirProof(memberV4, groupV4, 1, 1, undefined, undefined, navigator.hardwareConcurrency ?? 1)
       },
       {
         beforeAll: () => {
@@ -52,7 +51,7 @@ export async function generateBenchmarks() {
     .add(
       "Noir - Generate Proof 100 Members",
       async () => {
-        await generateNoirProof(memberV4, groupV4, 1, 1,undefined, undefined,  { threads: navigator.hardwareConcurrency ?? 1 })
+        await generateNoirProof(memberV4, groupV4, 1, 1, undefined, undefined, navigator.hardwareConcurrency ?? 1)
       },
       {
         beforeAll: () => {
@@ -66,7 +65,7 @@ export async function generateBenchmarks() {
     .add(
       "Noir - Generate Proof 500 Members",
       async () => {
-        await generateNoirProof(memberV4, groupV4, 1, 1, undefined, undefined, { threads: navigator.hardwareConcurrency ?? 1 })
+        await generateNoirProof(memberV4, groupV4, 1, 1, undefined, undefined, navigator.hardwareConcurrency ?? 1)
       },
       {
         beforeAll: () => {
@@ -80,7 +79,7 @@ export async function generateBenchmarks() {
     .add(
       "Noir - Generate Proof 1000 Members",
       async () => {
-        await generateNoirProof(memberV4, groupV4, 1, 1, undefined, undefined, { threads: navigator.hardwareConcurrency ?? 1 })
+        await generateNoirProof(memberV4, groupV4, 1, 1, undefined, undefined, navigator.hardwareConcurrency ?? 1)
       },
       {
         beforeAll: () => {
@@ -94,7 +93,7 @@ export async function generateBenchmarks() {
     .add(
       "Noir - Generate Proof 2000 Members",
       async () => {
-        await generateNoirProof(memberV4, groupV4, 1, 1, undefined, undefined, { threads: navigator.hardwareConcurrency ?? 1 })
+        await generateNoirProof(memberV4, groupV4, 1, 1, undefined, undefined, navigator.hardwareConcurrency ?? 1)
       },
       {
         beforeAll: () => {

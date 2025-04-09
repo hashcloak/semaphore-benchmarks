@@ -11,8 +11,8 @@
     "prettier:write": "prettier -w ."
   },
   "dependencies": {
-    "@semaphore-noir-protocol/proof": "file:<YOUR_PATH>/semaphore-noir/packages/proof",
-    "@semaphore-protocol/core": "4.9.1",
+    "@semaphore-protocol/core": "file:<YOUR_PATH>/semaphore-noir/packages/core",
+    "@semaphore-protocol/proof": "file:<YOUR_PATH>/semaphore-noir/packages/proof",
     "next": "15.0.1",
     "react": "19.0.0-rc-69d4b800-20241021",
     "react-dom": "19.0.0-rc-69d4b800-20241021",
