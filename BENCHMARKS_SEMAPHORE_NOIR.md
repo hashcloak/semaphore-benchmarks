@@ -3,6 +3,9 @@
 Version details:
 - `nargo version = 1.0.0-beta.3`
 - `bb 0.82.2`
+- `@aztec/bb.js 0.82.2`
+- `@noir-lang/noir_js 1.0.0-beta.3`
+- `@noir-lang/noir_wasm 1.0.0-beta.3`
 
 ## SDK 
 
@@ -16,26 +19,26 @@ Machine details:
 
 ### Proof generation
 
-| Index | Function                                            | ops/sec | Average Time (ms) | Samples |
-|-------|-----------------------------------------------------|---------|-------------------|---------|
-| 0     | Generate Proof 1 Member [Max tree depth 1]          | 0       | 1370.01822        | 10      |
-| 1     | Generate Proof 100 Members [Max tree depth 7]       | 0       | 2211.34649        | 10      |
-| 2     | Generate Proof 500 Members [Max tree depth 9]       | 0       | 2457.06099        | 10      |
-| 3     | Generate Proof 1000 Members [Max tree depth 10]     | 0       | 2481.54167        | 10      |
-| 4     | Generate Proof 2000 Members [Max tree depth 11]     | 0       | 2770.78957        | 10      |
+| Function                                           | ops/sec | Avg Time (ms) | Samples |
+|----------------------------------------------------|---------|----------------|---------|
+| Generate Proof 1 Member [Max tree depth 1]         | 0       | 1710.65        | 10      |
+| Generate Proof 100 Members [Max tree depth 7]      | 0       | 2311.87        | 10      |
+| Generate Proof 500 Members [Max tree depth 9]      | 0       | 2398.87        | 10      |
+| Generate Proof 1000 Members [Max tree depth 10]    | 0       | 2600.24        | 10      |
+| Generate Proof 2000 Members [Max tree depth 11]    | 0       | 3004.17        | 10      |
 
 ### Proof verification
 ```
 yarn ts-node src/verify-proof.ts
 ```
 
-| Index | Function                                         | ops/sec | Average Time (ms) | Samples |
-|-------|--------------------------------------------------|---------|-------------------|---------|
-| 0     | Verify Proof 1 Member [Max tree depth 1]         | 1       | 933.05125         | 10      |
-| 1     | Verify Proof 100 Members [Max tree depth 7]      | 0       | 1798.74448        | 10      |
-| 2     | Verify Proof 500 Members [Max tree depth 9]      | 0       | 1995.11173        | 10      |
-| 3     | Verify Proof 1000 Members [Max tree depth 10]    | 0       | 2092.08427        | 10      |
-| 4     | Verify Proof 2000 Members [Max tree depth 11]    | 0       | 2203.38747        | 10      |
+| Function                                           | ops/sec | Avg Time (ms) | Samples |
+|----------------------------------------------------|---------|----------------|---------|
+| Verify Proof 1 Member [Max tree depth 1]           | 1       | 974.98         | 10      |
+| Verify Proof 100 Members [Max tree depth 7]        | 0       | 1359.02        | 10      |
+| Verify Proof 500 Members [Max tree depth 9]        | 0       | 1490.25        | 10      |
+| Verify Proof 1000 Members [Max tree depth 10]      | 0       | 1527.17        | 10      |
+| Verify Proof 2000 Members [Max tree depth 11]      | 0       | 1898.70        | 10      |
 
 ## Circuit
 
