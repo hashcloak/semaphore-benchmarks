@@ -11,11 +11,7 @@ Version details:
 
 Benchmarks from `node`. 
 
-Machine details:
-- Computer: MacBook Pro
-- Chip: Intel Core i7 (6-core, 2.6 GHz)
-- Memory (RAM): 32 GB
-- Operating System: macOS Ventura version 13.7.4
+Machine details: MacBook Pro, Intel Core i7 (6-core, 2.6 GHz), 32 GB RAM.
 
 ### Proof generation
 
