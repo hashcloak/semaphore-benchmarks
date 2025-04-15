@@ -117,7 +117,17 @@ Gatecounts from `gatecount`.
  -->
 
 ## Browser
-TODO
+
+### Proof generation
+
+| Function                                           | ops/sec | Avg Time (ms) | Samples |
+|----------------------------------------------------|---------|----------------|---------|
+| Generate Proof 1 Member [Max tree depth 1]         | 1       | 978.54         | 10      |
+| Generate Proof 100 Members [Max tree depth 7]      | 0       | 1543.11        | 10      |
+| Generate Proof 500 Members [Max tree depth 9]      | 0       | 1717.46        | 10      |
+| Generate Proof 1000 Members [Max tree depth 10]    | 0       | 1843.71        | 10      |
+| Generate Proof 2000 Members [Max tree depth 11]    | 0       | 2120.75        | 10      |
+
 
 ## Nargo witness & proof generation, proof verification
 
