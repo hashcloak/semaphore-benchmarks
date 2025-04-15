@@ -118,3 +118,13 @@ Gatecounts from `gatecount`.
 
 ## Browser
 TODO
+
+## Nargo witness & proof generation, proof verification
+
+| MAX_DEPTH | Witness (ms) | Proof (ms) | Verify (ms) |
+|-----------|---------------|------------|--------------|
+|         1 |        850.52 |     261.05 |        49.20 |
+|         7 |       1181.96 |     419.18 |        48.99 |
+|         9 |       1350.19 |     408.28 |        49.86 |
+|        10 |       1478.30 |     431.82 |        49.99 |
+|        11 |       1553.66 |     495.16 |        53.55 |
