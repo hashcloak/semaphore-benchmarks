@@ -39,7 +39,7 @@ async function main() {
     .add(
       "Generate Proof 1 Member [Max tree depth 1]",
       async () => {
-        await generateNoirProof(memberV4, groupV4, 1, 1, undefined, undefined, os.cpus().length)
+        await generateNoirProof(memberV4, groupV4, 1, 1, undefined, undefined)
       },
       {
         beforeAll: () => {
@@ -52,7 +52,7 @@ async function main() {
     .add(
       "Generate Proof 100 Members [Max tree depth 7]",
       async () => {
-        await generateNoirProof(memberV4, groupV4, 1, 1, undefined, undefined, os.cpus().length)
+        await generateNoirProof(memberV4, groupV4, 1, 1, undefined, undefined)
       },
       {
         beforeAll: () => {
@@ -66,7 +66,7 @@ async function main() {
     .add(
       "Generate Proof 500 Members [Max tree depth 9]",
       async () => {
-        await generateNoirProof(memberV4, groupV4, 1, 1, undefined, undefined, os.cpus().length)
+        await generateNoirProof(memberV4, groupV4, 1, 1, undefined, undefined)
       },
       {
         beforeAll: () => {
@@ -80,7 +80,7 @@ async function main() {
     .add(
       "Generate Proof 1000 Members [Max tree depth 10]",
       async () => {
-        await generateNoirProof(memberV4, groupV4, 1, 1, undefined, undefined, os.cpus().length)
+        await generateNoirProof(memberV4, groupV4, 1, 1, undefined, undefined)
       },
       {
         beforeAll: () => {
@@ -94,7 +94,7 @@ async function main() {
     .add(
       "Generate Proof 2000 Members [Max tree depth 11]",
       async () => {
-        await generateNoirProof(memberV4, groupV4, 1, 1, undefined, undefined, os.cpus().length)
+        await generateNoirProof(memberV4, groupV4, 1, 1, undefined, undefined)
       },
       {
         beforeAll: () => {
