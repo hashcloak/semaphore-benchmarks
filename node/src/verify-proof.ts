@@ -45,21 +45,21 @@ async function main() {
     .add(
       "Verify Proof 1 Member [Max tree depth 1]",
       async () => {
-        await verifyNoirProof(proofV4, 1)
+        await verifyNoirProof(proofV4 as any, 1 as any)
       },
       {
         beforeAll: async () => {
           groupV4 = new V4.Group([])
           memberV4 = new V4.Identity()
           groupV4.addMember(memberV4.commitment)
-          proofV4 = await generateNoirProof(memberV4, groupV4, 1, 1, undefined, undefined)
+          proofV4 = await generateNoirProof(memberV4, groupV4, 1, 1, undefined, undefined) as any
         }
       }
     )
     .add(
       "Verify Proof 100 Members [Max tree depth 7]",
       async () => {
-        await verifyNoirProof(proofV4, 7)
+        await verifyNoirProof(proofV4 as any, 7 as any)
       },
       {
         beforeAll: async () => {
@@ -67,14 +67,14 @@ async function main() {
           groupV4 = new V4.Group(membersV4)
           const index = Math.floor(membersV4.length / 2)
           memberV4 = new V4.Identity(index.toString())
-          proofV4 = await generateNoirProof(memberV4, groupV4, 1, 1, undefined, undefined)
+          proofV4 = await generateNoirProof(memberV4, groupV4, 1, 1, undefined, undefined) as any
         }
       }
     )
     .add(
       "Verify Proof 500 Members [Max tree depth 9]",
       async () => {
-        await verifyNoirProof(proofV4, 9)
+        await verifyNoirProof(proofV4 as any, 9 as any)
       },
       {
         beforeAll: async () => {
@@ -82,14 +82,14 @@ async function main() {
           groupV4 = new V4.Group(membersV4)
           const index = Math.floor(membersV4.length / 2)
           memberV4 = new V4.Identity(index.toString())
-          proofV4 = await generateNoirProof(memberV4, groupV4, 1, 1, undefined, undefined)
+          proofV4 = await generateNoirProof(memberV4, groupV4, 1, 1, undefined, undefined) as any
         }
       }
     )
     .add(
       "Verify Proof 1000 Members [Max tree depth 10]",
       async () => {
-        await verifyNoirProof(proofV4, 10)
+        await verifyNoirProof(proofV4 as any, 10 as any)
       },
       {
         beforeAll: async () => {
@@ -97,14 +97,14 @@ async function main() {
           groupV4 = new V4.Group(membersV4)
           const index = Math.floor(membersV4.length / 2)
           memberV4 = new V4.Identity(index.toString())
-          proofV4 = await generateNoirProof(memberV4, groupV4, 1, 1, undefined, undefined)
+          proofV4 = await generateNoirProof(memberV4, groupV4, 1, 1, undefined, undefined) as any
         }
       }
     )
     .add(
       "Verify Proof 2000 Members [Max tree depth 11]",
       async () => {
-        await verifyNoirProof(proofV4, 11)
+        await verifyNoirProof(proofV4 as any, 11 as any)
       },
       {
         beforeAll: async () => {
@@ -112,7 +112,7 @@ async function main() {
           groupV4 = new V4.Group(membersV4)
           const index = Math.floor(membersV4.length / 2)
           memberV4 = new V4.Identity(index.toString())
-          proofV4 = await generateNoirProof(memberV4, groupV4, 1, 1, undefined, undefined)
+          proofV4 = await generateNoirProof(memberV4, groupV4, 1, 1, undefined, undefined) as any
         }
       }
     )
