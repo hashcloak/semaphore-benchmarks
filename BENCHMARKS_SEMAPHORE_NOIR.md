@@ -13,7 +13,7 @@ Benchmarks from `node`.
 
 Machine details: MacBook Pro, Intel Core i7 (6-core, 2.6 GHz), 32 GB RAM.
 
-### Proof generation
+### Proof generation using `bb.js`
 
 | Function                                           | ops/sec | Avg Time (ms) | Samples |
 |----------------------------------------------------|---------|----------------|---------|
@@ -23,7 +23,17 @@ Machine details: MacBook Pro, Intel Core i7 (6-core, 2.6 GHz), 32 GB RAM.
 | Generate Proof 1000 Members [Max tree depth 10]    | 0       | 2600.24        | 10      |
 | Generate Proof 2000 Members [Max tree depth 11]    | 0       | 3004.17        | 10      |
 
-### Proof verification
+### Proof generation using `bb cli`
+
+| Index | Function                                       | ops/sec | Average Time (ms) | Samples |
+|-------|------------------------------------------------|---------|--------------------|---------|
+| 0     | Generate Proof 1 Member [Max tree depth 1]     | 2       | 475.55881          | 10      |
+| 1     | Generate Proof 100 Members [Max tree depth 7]  | 1       | 616.38087          | 10      |
+| 2     | Generate Proof 500 Members [Max tree depth 9]  | 1       | 676.81034          | 10      |
+| 3     | Generate Proof 1000 Members [Max tree depth 10]| 1       | 727.58321          | 10      |
+| 4     | Generate Proof 2000 Members [Max tree depth 11]| 1       | 790.13345          | 10      |
+
+### Proof verification using `bb.js`
 ```
 yarn ts-node src/verify-proof.ts
 ```
@@ -35,6 +45,16 @@ yarn ts-node src/verify-proof.ts
 | Verify Proof 500 Members [Max tree depth 9]        | 0       | 1490.25        | 10      |
 | Verify Proof 1000 Members [Max tree depth 10]      | 0       | 1527.17        | 10      |
 | Verify Proof 2000 Members [Max tree depth 11]      | 0       | 1898.70        | 10      |
+
+### Proof verification using `bb cli` & precompiled vk
+
+| Index | Function                                        | ops/sec | Average Time (ms) | Samples |
+|-------|--------------------------------------------------|---------|--------------------|---------|
+| 0     | Verify Proof 1 Member [Max tree depth 1]         | 20      | 49.57040           | 11      |
+| 1     | Verify Proof 100 Members [Max tree depth 7]      | 20      | 48.95387           | 11      |
+| 2     | Verify Proof 500 Members [Max tree depth 9]      | 19      | 50.61674           | 10      |
+| 3     | Verify Proof 1000 Members [Max tree depth 10]    | 19      | 50.44912           | 11      |
+| 4     | Verify Proof 2000 Members [Max tree depth 11]    | 18      | 53.41946           | 10      |
 
 ## Circuit
 
