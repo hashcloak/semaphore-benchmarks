@@ -1,5 +1,5 @@
 import { Bench, Task } from "tinybench"
-import { generateNoirProof } from "@semaphore-protocol/proof"
+import { generateNoirProof, initSemaphoreNoirBackend, SemaphoreNoirBackend } from "@semaphore-protocol/proof"
 import * as V4 from "@semaphore-protocol/core"
 import os from "os"
 
@@ -35,73 +35,81 @@ async function main() {
 
   let membersV4: bigint[]
 
+  let backend: SemaphoreNoirBackend
+
   bench
     .add(
       "Generate Proof 1 Member [Max tree depth 1]",
       async () => {
-        await generateNoirProof(memberV4, groupV4, 1, 1, undefined, undefined, os.cpus().length)
+        await generateNoirProof(memberV4, groupV4, 1, 1, backend)
       },
       {
-        beforeAll: () => {
+        beforeAll: async () => {
           groupV4 = new V4.Group([])
           memberV4 = new V4.Identity()
           groupV4.addMember(memberV4.commitment)
+          backend = await initSemaphoreNoirBackend(1)
         }
       }
     )
     .add(
       "Generate Proof 100 Members [Max tree depth 7]",
       async () => {
-        await generateNoirProof(memberV4, groupV4, 1, 1, undefined, undefined, os.cpus().length)
+        await generateNoirProof(memberV4, groupV4, 1, 1, backend)
       },
       {
-        beforeAll: () => {
+        beforeAll: async () => {
           membersV4 = generateMembersV4(100)
           groupV4 = new V4.Group(membersV4)
           const index = Math.floor(membersV4.length / 2)
           memberV4 = new V4.Identity(index.toString())
+          backend = await initSemaphoreNoirBackend(7)
         }
       }
     )
     .add(
       "Generate Proof 500 Members [Max tree depth 9]",
       async () => {
-        await generateNoirProof(memberV4, groupV4, 1, 1, undefined, undefined, os.cpus().length)
+        await generateNoirProof(memberV4, groupV4, 1, 1, backend)
       },
       {
-        beforeAll: () => {
+        beforeAll: async () => {
           membersV4 = generateMembersV4(500)
           groupV4 = new V4.Group(membersV4)
           const index = Math.floor(membersV4.length / 2)
           memberV4 = new V4.Identity(index.toString())
+          backend = await initSemaphoreNoirBackend(9)
+
         }
       }
     )
     .add(
       "Generate Proof 1000 Members [Max tree depth 10]",
       async () => {
-        await generateNoirProof(memberV4, groupV4, 1, 1, undefined, undefined, os.cpus().length)
+        await generateNoirProof(memberV4, groupV4, 1, 1, backend)
       },
       {
-        beforeAll: () => {
+        beforeAll: async () => {
           membersV4 = generateMembersV4(1000)
           groupV4 = new V4.Group(membersV4)
           const index = Math.floor(membersV4.length / 2)
           memberV4 = new V4.Identity(index.toString())
+          backend = await initSemaphoreNoirBackend(10)
         }
       }
     )
     .add(
       "Generate Proof 2000 Members [Max tree depth 11]",
       async () => {
-        await generateNoirProof(memberV4, groupV4, 1, 1, undefined, undefined, os.cpus().length)
+        await generateNoirProof(memberV4, groupV4, 1, 1, backend)
       },
       {
-        beforeAll: () => {
+        beforeAll: async () => {
           membersV4 = generateMembersV4(2000)
           groupV4 = new V4.Group(membersV4)
           const index = Math.floor(membersV4.length / 2)
           memberV4 = new V4.Identity(index.toString())
+          backend = await initSemaphoreNoirBackend(11)
         }
       }
     )
