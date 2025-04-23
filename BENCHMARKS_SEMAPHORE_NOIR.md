@@ -36,6 +36,57 @@ yarn ts-node src/verify-proof.ts
 | Verify Proof 1000 Members [Max tree depth 10]      | 0       | 1527.17        | 10      |
 | Verify Proof 2000 Members [Max tree depth 11]      | 0       | 1898.70        | 10      |
 
+## Benchmarks for bb.js optimization
+Machine details: MacBook Air, Apple M2 (8-core, 3.49 GHz), 16 GB RAM.
+
+### Proof generation with updated UltraHonkBackend (accepts precomputed numPublicInputs)
+
+| Function                                           | ops/sec | Avg Time (ms) | Samples |
+|----------------------------------------------------|---------|----------------|---------|
+| Generate Proof 1 Member [Max tree depth 1]         | 0       | 984.50         | 10      |
+| Generate Proof 100 Members [Max tree depth 7]      | 0       | 1536.84        | 10      |
+| Generate Proof 500 Members [Max tree depth 9]      | 0       | 1701.30        | 10      |
+| Generate Proof 1000 Members [Max tree depth 10]    | 0       | 1776.86        | 10      |
+| Generate Proof 2000 Members [Max tree depth 11]    | 0       | 2205.28        | 10      |
+
+### Proof verification with updated UltraHonkBackend (accepts precomputed VKs)
+| Function                                           | ops/sec | Avg Time (ms) | Samples |
+|----------------------------------------------------|---------|----------------|---------|
+| Verify Proof 1 Member [Max tree depth 1]           | 5       | 199.69         | 10      |
+| Verify Proof 100 Members [Max tree depth 7]        | 4       | 227.95         | 10      |
+| Verify Proof 500 Members [Max tree depth 9]        | 4       | 233.36         | 10      |
+| Verify Proof 1000 Members [Max tree depth 10]      | 4       | 239.72         | 10      |
+| Verify Proof 2000 Members [Max tree depth 11]      | 3       | 252.09         | 10      |
+
+
+### UltraHonkBackend Initialization
+| Function                                           | ops/sec | Avg Time (ms) | Samples |
+|----------------------------------------------------|---------|----------------|---------|
+| Initialize Backend Tree Depth 1                    | 5       | 185.58         | 10      |
+| Initialize Backend Tree Depth 10                   | 4       | 222.44         | 10      |
+| Initialize Backend Tree Depth 20                   | 3       | 276.05         | 10      |
+| Initialize Backend Tree Depth 32                   | 2       | 365.78         | 10      |
+
+### Proof generation with updated UltraHonkBackend (accepts precomputed numPublicInputs) & pre-initialzing UltraHonkBackend
+
+| Function                                           | ops/sec | Avg Time (ms) | Samples |
+|----------------------------------------------------|---------|----------------|---------|
+| Generate Proof 1 Member [Max tree depth 1]         | 1       | 804.43         | 10      |
+| Generate Proof 100 Members [Max tree depth 7]      | 0       | 1327.45        | 10      |
+| Generate Proof 500 Members [Max tree depth 9]      | 0       | 1473.40        | 10      |
+| Generate Proof 1000 Members [Max tree depth 10]    | 0       | 1551.16        | 10      |
+| Generate Proof 2000 Members [Max tree depth 11]    | 0       | 1818.85        | 10      |
+
+### Proof verification with updated UltraHonkBackend (accepts precomputed VKs) & pre-initialzing UltraHonkBackend
+| Function                                           | ops/sec | Avg Time (ms) | Samples |
+|----------------------------------------------------|---------|----------------|---------|
+| Verify Proof 1 Member [Max tree depth 1]           | 67       | 14.85         | 10      |
+| Verify Proof 100 Members [Max tree depth 7]        | 66       | 15.12         | 10      |
+| Verify Proof 500 Members [Max tree depth 9]        | 66       | 15.10         | 10      |
+| Verify Proof 1000 Members [Max tree depth 10]      | 66       | 15.06         | 10      |
+| Verify Proof 2000 Members [Max tree depth 11]      | 64       | 15.47         | 10      |
+
+
 ## Circuit
 
 Gatecounts from `gatecount`. 
