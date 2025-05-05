@@ -11,4 +11,5 @@ Run proof generation/verification:
 ```
 yarn ts-node src/generate-proof.ts
 yarn ts-node src/verify-proof.ts
+yarn ts-node src/init-backend.ts
 ```

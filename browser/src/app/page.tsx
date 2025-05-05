@@ -38,7 +38,7 @@ export default function Home() {
         </div>
         <div className="flex flex-col justify-center items-center my-10">
           <div className="w-96 text-xl text-center">
-            Generate browser benchmarks for Semaphore V3 and Semaphore V4.
+            Generate browser benchmarks for Semaphore Noir.
           </div>
           <div className="mt-5 flex flex-col justify-center items-center">
             <button
