@@ -2,7 +2,14 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
+In `package.json` add the correct path for `"@semaphore-protocol/proof"` and `"@semaphore-protocol/core"` which is the local semaphore-noir library. Then run:
+
+```
+yarn install
+yarn build
+```
+
+Run the development server:
 
 ```bash
 npm run dev

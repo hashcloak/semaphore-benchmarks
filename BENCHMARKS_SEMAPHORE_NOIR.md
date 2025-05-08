@@ -73,6 +73,28 @@ yarn ts-node src/verify-proof.ts
 | Initialize Backend Tree Depth 20                   | 3       | 276.05         | 10      |
 | Initialize Backend Tree Depth 32                   | 2       | 365.78         | 10      |
 
+### Batching
+```
+yarn ts-node src/batching.ts
+```
+
+Proof Generation Benches (keccak = true)
+|  index  |       Function         | ops/sec | Avg time (ms) | Samples |
+|---------|------------------------|---------|---------------|---------|
+|    0    |  Generate batch of 10  |    0    |     96004     |    3    |
+|    1    |  Generate batch of 20  |    0    |     223294    |    3    |
+|    2    |  Generate batch of 30  |    0    |     355233    |    3    |
+
+
+
+Proof Verification Benches (keccak = true)
+|  index  |       Function       | ops/sec | Avg time (ms) | Samples |
+|---------|----------------------|---------|---------------|---------|
+|    0    |  Verify batch of 10  |    22   |     46        |    11   |
+|    1    |  Verify batch of 20  |    26   |     38        |    14   |
+|    2    |  Verify batch of 30  |    31   |     32        |    16   |
+
+
 
 ## Circuit
 

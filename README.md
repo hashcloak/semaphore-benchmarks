@@ -1,15 +1,6 @@
 # Semaphore Noir Benchmarks
 
-In `package.json` add the correct path for `"@semaphore-protocol/proof"` which is the local semaphore-noir library. Then run:
+This library provides benchmark functionalities for Semaphore Noir on both Node and browser environments.
+See the READMEs in /browser and /node for instructions. 
 
-```
-yarn install
-```
 
-Run proof generation/verification:
-
-```
-yarn ts-node src/generate-proof.ts
-yarn ts-node src/verify-proof.ts
-yarn ts-node src/init-backend.ts
-```
