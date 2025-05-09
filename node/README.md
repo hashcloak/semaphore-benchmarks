@@ -13,4 +13,5 @@ yarn ts-node src/generate-proof.ts
 yarn ts-node src/verify-proof.ts
 yarn ts-node src/init-backend.ts
 yarn ts-node src/batching.ts
+yarn ts-node src/generate-proof-for-batching.ts
 ```
