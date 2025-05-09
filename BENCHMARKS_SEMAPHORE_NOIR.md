@@ -94,6 +94,16 @@ Proof Verification Benches (keccak = true)
 |    1    |  Verify batch of 20  |    26   |     38        |    14   |
 |    2    |  Verify batch of 30  |    31   |     32        |    16   |
 
+#### Generat a single semaphore proof for batching
+
+| Function                                                          | ops/sec | Avg Time (ms)  | Samples |
+|-------------------------------------------------------------------|---------|----------------|---------|
+| Generate Proof (for batching) 1 Member [Max tree depth 1]         | 4       | 238.81         | 10      |
+| Generate Proof (for batching) 100 Members [Max tree depth 7]      | 3       | 307.53         | 10      |
+| Generate Proof (for batching) 500 Members [Max tree depth 9]      | 2       | 336.82         | 10      |
+| Generate Proof (for batching) 1000 Members [Max tree depth 10]    | 2       | 350.36         | 10      |
+| Generate Proof (for batching) 2000 Members [Max tree depth 11]    | 2       | 389.08         | 10      |
+
 
 
 ## Circuit
