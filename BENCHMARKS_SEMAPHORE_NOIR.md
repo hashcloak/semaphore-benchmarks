@@ -1,11 +1,11 @@
 # Benchmarks - NOIR SEMAPHORE
 
 Version details:
-- `nargo version = 1.0.0-beta.3`
+- `nargo version = 1.0.0-beta.5`
 - `bb 0.82.2`
 - `@aztec/bb.js 0.82.2`
-- `@noir-lang/noir_js 1.0.0-beta.3`
-- `@noir-lang/noir_wasm 1.0.0-beta.3`
+- `@noir-lang/noir_js 1.0.0-beta.5`
+- `@noir-lang/noir_wasm 1.0.0-beta.5`
 
 ## SDK 
 
@@ -23,11 +23,11 @@ yarn ts-node src/generate-proof.ts
 
 | Function                                           | ops/sec | Avg Time (ms)  | Samples |
 |----------------------------------------------------|---------|----------------|---------|
-| Generate Proof 1 Member [Max tree depth 1]         | 0       | 296.87         | 10      |
-| Generate Proof 100 Members [Max tree depth 7]      | 0       | 412.60         | 10      |
-| Generate Proof 500 Members [Max tree depth 9]      | 0       | 454.38         | 10      |
-| Generate Proof 1000 Members [Max tree depth 10]    | 0       | 483.66         | 10      |
-| Generate Proof 2000 Members [Max tree depth 11]    | 0       | 538.07         | 10      |
+| Generate Proof 1 Member [Max tree depth 1]         | 0       | 296.39         | 10      |
+| Generate Proof 100 Members [Max tree depth 7]      | 0       | 437.36         | 10      |
+| Generate Proof 500 Members [Max tree depth 9]      | 0       | 476.52         | 10      |
+| Generate Proof 1000 Members [Max tree depth 10]    | 0       | 501.09         | 10      |
+| Generate Proof 2000 Members [Max tree depth 11]    | 0       | 559.14         | 10      |
 
 ### Proof verification (with backend pre-initialized)
 ```
@@ -36,11 +36,11 @@ yarn ts-node src/verify-proof.ts
 
 | Function                                           | ops/sec | Avg Time (ms) | Samples |
 |----------------------------------------------------|---------|----------------|---------|
-| Verify Proof 1 Member [Max tree depth 1]           | 67       | 14.85         | 10      |
+| Verify Proof 1 Member [Max tree depth 1]           | 67       | 14.88         | 10      |
 | Verify Proof 100 Members [Max tree depth 7]        | 66       | 15.12         | 10      |
-| Verify Proof 500 Members [Max tree depth 9]        | 66       | 15.10         | 10      |
-| Verify Proof 1000 Members [Max tree depth 10]      | 66       | 15.06         | 10      |
-| Verify Proof 2000 Members [Max tree depth 11]      | 64       | 15.47         | 10      |
+| Verify Proof 500 Members [Max tree depth 9]        | 66       | 15.13         | 10      |
+| Verify Proof 1000 Members [Max tree depth 10]      | 66       | 15.08         | 10      |
+| Verify Proof 2000 Members [Max tree depth 11]      | 64       | 15.44         | 10      |
 
 ### Proof generation + bakend initialization
 ```
@@ -49,11 +49,11 @@ yarn ts-node src/generate-proof.ts
 
 | Function                                                                 | ops/sec | Avg Time (ms) | Samples |
 |--------------------------------------------------------------------------|---------|----------------|---------|
-| Generate Proof 1 Member + Initialize backend [Max tree depth 1]          | 0       | 547.23         | 10      |
-| Generate Proof 100 Members + Initialize backend [Max tree depth 7]       | 0       | 705.19         | 10      |
-| Generate Proof 500 Members + Initialize backend [Max tree depth 9]       | 0       | 760.26         | 10      |
-| Generate Proof 1000 Members + Initialize backend [Max tree depth 10]     | 0       | 822.15         | 10      |
-| Generate Proof 2000 Members + Initialize backend [Max tree depth 11]     | 0       | 885.36         | 10      |
+| Generate Proof 1 Member + Initialize backend [Max tree depth 1]          | 0       | 541.11         | 10      |
+| Generate Proof 100 Members + Initialize backend [Max tree depth 7]       | 0       | 736.06         | 10      |
+| Generate Proof 500 Members + Initialize backend [Max tree depth 9]       | 0       | 790.73         | 10      |
+| Generate Proof 1000 Members + Initialize backend [Max tree depth 10]     | 0       | 837.24         | 10      |
+| Generate Proof 2000 Members + Initialize backend [Max tree depth 11]     | 0       | 928.97         | 10      |
 
 ### Proof verification + backend initialization
 ```
@@ -62,19 +62,19 @@ yarn ts-node src/verify-proof.ts
 
 | Function                                                                | ops/sec  | Avg Time (ms) | Samples |
 |-------------------------------------------------------------------------|----------|---------------|---------|
-| Verify Proof 1 Member + Initialize backend [Max tree depth 1]           | 67       | 194.27        | 10      |
-| Verify Proof 100 Members + Initialize backend [Max tree depth 7]        | 66       | 224.15        | 10      |
-| Verify Proof 500 Members + Initialize backend [Max tree depth 9]        | 66       | 233.42        | 10      |
-| Verify Proof 1000 Members + Initialize backend [Max tree depth 10]      | 66       | 237.17        | 10      |
-| Verify Proof 2000 Members + Initialize backend [Max tree depth 11]      | 64       | 247.10        | 10      |
+| Verify Proof 1 Member + Initialize backend [Max tree depth 1]           | 67       | 193.53        | 10      |
+| Verify Proof 100 Members + Initialize backend [Max tree depth 7]        | 66       | 224.11        | 10      |
+| Verify Proof 500 Members + Initialize backend [Max tree depth 9]        | 66       | 231.21        | 10      |
+| Verify Proof 1000 Members + Initialize backend [Max tree depth 10]      | 66       | 235.15        | 10      |
+| Verify Proof 2000 Members + Initialize backend [Max tree depth 11]      | 64       | 245.46        | 10      |
 
 ### UltraHonkBackend Initialization
 | Function                                           | ops/sec | Avg Time (ms)  | Samples |
 |----------------------------------------------------|---------|----------------|---------|
-| Initialize Backend Tree Depth 1                    | 5       | 185.58         | 10      |
-| Initialize Backend Tree Depth 10                   | 4       | 222.44         | 10      |
-| Initialize Backend Tree Depth 20                   | 3       | 276.05         | 10      |
-| Initialize Backend Tree Depth 32                   | 2       | 365.78         | 10      |
+| Initialize Backend Tree Depth 1                    | 5       | 178.29         | 10      |
+| Initialize Backend Tree Depth 10                   | 4       | 217.49         | 10      |
+| Initialize Backend Tree Depth 20                   | 3       | 269.87         | 10      |
+| Initialize Backend Tree Depth 32                   | 2       | 337.06         | 10      |
 
 ### Batching
 ```
@@ -84,9 +84,9 @@ yarn ts-node src/batching.ts
 Proof Generation Benches (keccak = true)
 |       Function         | ops/sec | Avg time (ms) | Samples |
 |------------------------|---------|---------------|---------|
-|  Generate batch of 10  |    0    |     96004     |    3    |
-|  Generate batch of 20  |    0    |     223294    |    3    |
-|  Generate batch of 30  |    0    |     355233    |    3    |
+|  Generate batch of 10  |    0    |     98977     |    3    |
+|  Generate batch of 20  |    0    |     211168    |    3    |
+|  Generate batch of 30  |    0    |     327370    |    3    |
 |  Generate batch of 100 |    0    |     1233135   |    3    |
 
 
@@ -94,8 +94,8 @@ Proof Generation Benches (keccak = true)
 Proof Verification Benches (keccak = true)
 |       Function       | ops/sec | Avg time (ms) | Samples |
 |----------------------|---------|---------------|---------|
-|  Verify batch of 10  |    22   |     46        |    11   |
-|  Verify batch of 20  |    26   |     38        |    14   |
+|  Verify batch of 10  |    22   |     34        |    11   |
+|  Verify batch of 20  |    26   |     32        |    14   |
 |  Verify batch of 30  |    31   |     32        |    16   |
 |  Verify batch of 100 |    25   |     40        |    13   |
 
@@ -103,11 +103,11 @@ Proof Verification Benches (keccak = true)
 
 | Function                                                          | ops/sec | Avg Time (ms)  | Samples |
 |-------------------------------------------------------------------|---------|----------------|---------|
-| Generate Proof (for batching) 1 Member [Max tree depth 1]         | 4       | 238.81         | 10      |
-| Generate Proof (for batching) 100 Members [Max tree depth 7]      | 3       | 307.53         | 10      |
-| Generate Proof (for batching) 500 Members [Max tree depth 9]      | 2       | 336.82         | 10      |
-| Generate Proof (for batching) 1000 Members [Max tree depth 10]    | 2       | 350.36         | 10      |
-| Generate Proof (for batching) 2000 Members [Max tree depth 11]    | 2       | 389.08         | 10      |
+| Generate Proof (for batching) 1 Member [Max tree depth 1]         | 4       | 235.14         | 10      |
+| Generate Proof (for batching) 100 Members [Max tree depth 7]      | 3       | 336.97         | 10      |
+| Generate Proof (for batching) 500 Members [Max tree depth 9]      | 2       | 356.95         | 10      |
+| Generate Proof (for batching) 1000 Members [Max tree depth 10]    | 2       | 375.09         | 10      |
+| Generate Proof (for batching) 2000 Members [Max tree depth 11]    | 2       | 407.43         | 10      |
 
 
 
@@ -193,11 +193,11 @@ Gatecounts from `gatecount`.
 
 | Function                                           | ops/sec | Avg Time (ms) | Samples |
 |----------------------------------------------------|---------|----------------|---------|
-| Generate Proof 1 Member [Max tree depth 1]         | 1       | 797.18         | 10      |
-| Generate Proof 100 Members [Max tree depth 7]      | 0       | 1315.42        | 10      |
-| Generate Proof 500 Members [Max tree depth 9]      | 0       | 1457.08        | 10      |
-| Generate Proof 1000 Members [Max tree depth 10]    | 0       | 1528.59        | 10      |
-| Generate Proof 2000 Members [Max tree depth 11]    | 0       | 1815.77        | 10      |
+| Generate Proof 1 Member [Max tree depth 1]         | 1       | 793.78         | 10      |
+| Generate Proof 100 Members [Max tree depth 7]      | 0       | 1374.85        | 10      |
+| Generate Proof 500 Members [Max tree depth 9]      | 0       | 1519.06        | 10      |
+| Generate Proof 1000 Members [Max tree depth 10]    | 0       | 1556.16        | 10      |
+| Generate Proof 2000 Members [Max tree depth 11]    | 0       | 1895.45        | 10      |
 
 
 ## Nargo witness & proof generation, proof verification

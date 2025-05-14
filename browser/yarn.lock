@@ -19,9 +19,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@aztec/bb.js@npm:0.72.1":
-  version: 0.72.1
-  resolution: "@aztec/bb.js@npm:0.72.1"
+"@aztec/bb.js@npm:0.82.2":
+  version: 0.82.2
+  resolution: "@aztec/bb.js@npm:0.82.2"
   dependencies:
     comlink: "npm:^4.4.1"
     commander: "npm:^12.1.0"
@@ -31,7 +31,7 @@ __metadata:
     tslib: "npm:^2.4.0"
   bin:
     bb.js: dest/node/main.js
-  checksum: 10/9dc0e42c7f0dd4ef9a49fb8fd8d69a1982ae8447c9f0cee794e767f95af6d42be72cf1ee2dbb657c0a7e6bdf4a11aeae6b179933cb182cf98037286075280541
+  checksum: 10/3915c7ebe2de129d7b4ae117064f7f416a50272e6b0dd5ba2d13636eadefb86bb8fc189db48994eea09ed21124f43f0ca5590398e31808b6101a0b3f235d92eb
   languageName: node
   linkType: hard
 
@@ -600,47 +600,48 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@noir-lang/acvm_js@npm:1.0.0-beta.3":
-  version: 1.0.0-beta.3
-  resolution: "@noir-lang/acvm_js@npm:1.0.0-beta.3"
-  checksum: 10/e314c00a6509cf6bb0395ebcdbe78b45d3136eb50e4e4756de201faa1e0f62f147f7d9d039e1db13446443b6973409ccf108e4fb4d45abdd2f4981d0c2aecf7d
+"@noir-lang/acvm_js@npm:1.0.0-beta.5":
+  version: 1.0.0-beta.5
+  resolution: "@noir-lang/acvm_js@npm:1.0.0-beta.5"
+  checksum: 10/37c4c3f0fd6e6e704f327cede4a2fc9ba7838ecb349135f7a505b39a5fec535dc88d85e6248c15353c963ee74105225803c399868e0b0994dd8e760b885af40e
   languageName: node
   linkType: hard
 
-"@noir-lang/noir_js@npm:1.0.0-beta.3":
-  version: 1.0.0-beta.3
-  resolution: "@noir-lang/noir_js@npm:1.0.0-beta.3"
+"@noir-lang/noir_js@npm:1.0.0-beta.5":
+  version: 1.0.0-beta.5
+  resolution: "@noir-lang/noir_js@npm:1.0.0-beta.5"
   dependencies:
-    "@noir-lang/acvm_js": "npm:1.0.0-beta.3"
-    "@noir-lang/noirc_abi": "npm:1.0.0-beta.3"
-    "@noir-lang/types": "npm:1.0.0-beta.3"
-  checksum: 10/4e756f69e5c8fcfe4f1243f026e37d68584852ad18887414ccc74de928ff2c019ea785ae06e48c523744676ccff2993b4d3ed8b971d6478e431af38574b4e924
-  languageName: node
-  linkType: hard
-
-"@noir-lang/noir_wasm@npm:1.0.0-beta.3":
-  version: 1.0.0-beta.3
-  resolution: "@noir-lang/noir_wasm@npm:1.0.0-beta.3"
-  dependencies:
-    "@noir-lang/types": "npm:1.0.0-beta.3"
+    "@noir-lang/acvm_js": "npm:1.0.0-beta.5"
+    "@noir-lang/noirc_abi": "npm:1.0.0-beta.5"
+    "@noir-lang/types": "npm:1.0.0-beta.5"
     pako: "npm:^2.1.0"
-  checksum: 10/459f8c9db4c19bc9ab3e8c92c479d48400cd6c7a755778006adc40ad4709e147924ad664f27d7b1de09753fe3b84d1167e8917000eaa5c6271f731da9385e259
+  checksum: 10/2025601244f8810070f3fe756a5d08ea10eec2d70ebd5407bdc018cc925e563a228b8ede27e057ea930b6b3e630007f986142e82c2a0746e0fd727bf4f8e5f63
   languageName: node
   linkType: hard
 
-"@noir-lang/noirc_abi@npm:1.0.0-beta.3":
-  version: 1.0.0-beta.3
-  resolution: "@noir-lang/noirc_abi@npm:1.0.0-beta.3"
+"@noir-lang/noir_wasm@npm:1.0.0-beta.5":
+  version: 1.0.0-beta.5
+  resolution: "@noir-lang/noir_wasm@npm:1.0.0-beta.5"
   dependencies:
-    "@noir-lang/types": "npm:1.0.0-beta.3"
-  checksum: 10/325b3a89197974960f62879715f6d3d545e80a091a0a4189b79adcb5318c6eb074c0cf6e653f33fcad8ac2db26ede68a438103aa369543d70b4ab667a0625ce5
+    "@noir-lang/types": "npm:1.0.0-beta.5"
+    pako: "npm:^2.1.0"
+  checksum: 10/e782c2208bf3ae70fe40e82dce3d12ca8ae164cd904615378f36c35880a315a21aac29e1aa6524eef85892b70bfefb120005e6af39694b499902b1f476286733
   languageName: node
   linkType: hard
 
-"@noir-lang/types@npm:1.0.0-beta.3":
-  version: 1.0.0-beta.3
-  resolution: "@noir-lang/types@npm:1.0.0-beta.3"
-  checksum: 10/3425d082fe1496781dac590877b4c5d67c6e3d26fdeb0d039d2284494e4dea55193419260709027a3161369a90c28775d0eca5eee728b54c9ea9b3abf414f9b8
+"@noir-lang/noirc_abi@npm:1.0.0-beta.5":
+  version: 1.0.0-beta.5
+  resolution: "@noir-lang/noirc_abi@npm:1.0.0-beta.5"
+  dependencies:
+    "@noir-lang/types": "npm:1.0.0-beta.5"
+  checksum: 10/ddf6aa7874292b141e41413bfbdcb2ba1d0c0e4cdd91e57d4a45e7287b68a21dc194524080997ffaae11c605230f0966ded715a7b078035f0c6d2a409873cd26
+  languageName: node
+  linkType: hard
+
+"@noir-lang/types@npm:1.0.0-beta.5":
+  version: 1.0.0-beta.5
+  resolution: "@noir-lang/types@npm:1.0.0-beta.5"
+  checksum: 10/31bce7e54608775a4bbe04c2b2c0a525ec9418966dc115d4b4e03b3eb8e3e376f77601349d0387351586327f8f7e21221b7a95519bfa78168f215339193deef2
   languageName: node
   linkType: hard
 
@@ -696,12 +697,12 @@ __metadata:
 
 "@semaphore-protocol/core@file:/Users/liaoyuchen/Developer/hashcloak-noir/semaphore-noir/packages/core::locator=browser%40workspace%3A.":
   version: 4.9.1
-  resolution: "@semaphore-protocol/core@file:/Users/liaoyuchen/Developer/hashcloak-noir/semaphore-noir/packages/core#/Users/liaoyuchen/Developer/hashcloak-noir/semaphore-noir/packages/core::hash=f41ecd&locator=browser%40workspace%3A."
+  resolution: "@semaphore-protocol/core@file:/Users/liaoyuchen/Developer/hashcloak-noir/semaphore-noir/packages/core#/Users/liaoyuchen/Developer/hashcloak-noir/semaphore-noir/packages/core::hash=8557b5&locator=browser%40workspace%3A."
   dependencies:
     "@semaphore-protocol/group": "npm:4.9.1"
     "@semaphore-protocol/identity": "npm:4.9.1"
     "@semaphore-protocol/proof": "npm:4.9.1"
-  checksum: 10/4d24d6702501c0e3b4aadefca9a4abc32b85bc8ca22218fa154e1abd8661c1de5739c1a8b5bb043ac1ade640a451df85477a9ccc5f61d4f1398b9b7fe75b01cd
+  checksum: 10/ccf0e94f2be2187c6b27d3fbd3e853ca6696b89b99cd99358ef44b2dc55c483a4091c6142c20cb7999a64344999508780ad1307b2b38f1b2981e23551aefce74
   languageName: node
   linkType: hard
 
@@ -730,11 +731,11 @@ __metadata:
 
 "@semaphore-protocol/proof@file:/Users/liaoyuchen/Developer/hashcloak-noir/semaphore-noir/packages/proof::locator=browser%40workspace%3A.":
   version: 4.9.1
-  resolution: "@semaphore-protocol/proof@file:/Users/liaoyuchen/Developer/hashcloak-noir/semaphore-noir/packages/proof#/Users/liaoyuchen/Developer/hashcloak-noir/semaphore-noir/packages/proof::hash=fb90eb&locator=browser%40workspace%3A."
+  resolution: "@semaphore-protocol/proof@file:/Users/liaoyuchen/Developer/hashcloak-noir/semaphore-noir/packages/proof#/Users/liaoyuchen/Developer/hashcloak-noir/semaphore-noir/packages/proof::hash=5e3116&locator=browser%40workspace%3A."
   dependencies:
-    "@aztec/bb.js": "npm:0.72.1"
-    "@noir-lang/noir_js": "npm:1.0.0-beta.3"
-    "@noir-lang/noir_wasm": "npm:1.0.0-beta.3"
+    "@aztec/bb.js": "npm:0.82.2"
+    "@noir-lang/noir_js": "npm:1.0.0-beta.5"
+    "@noir-lang/noir_wasm": "npm:1.0.0-beta.5"
     "@semaphore-protocol/utils": "npm:4.9.1"
     "@zk-kit/artifacts": "file:/Users/liaoyuchen/Developer/snark-artifacts/packages/artifacts"
     "@zk-kit/utils": "npm:1.3.0"
@@ -743,7 +744,7 @@ __metadata:
   peerDependencies:
     "@semaphore-protocol/group": 4.9.1
     "@semaphore-protocol/identity": 4.9.1
-  checksum: 10/f00f0ad6b814e16d1c9285291cce0117ffe4a982f3a0c84f6f7840c178748dd65ddaa48cd18109157a907796b0b647d9e82601597cd1238cde7e6afc41cb6e7f
+  checksum: 10/64f842915942623879f2f570ac378e36fcb8082bf601fbff31d69f708f3a99d73bf064f865bcad3aec58e97f0850eb2582a463391d96fbb974886a3e27a270c5
   languageName: node
   linkType: hard
 
@@ -1099,19 +1100,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zk-kit/artifacts@file:/Users/liaoyuchen/Developer/snark-artifacts/packages/artifacts::locator=%40semaphore-protocol%2Fproof%40file%3A%2FUsers%2Fliaoyuchen%2FDeveloper%2Fhashcloak-noir%2Fsemaphore-noir%2Fpackages%2Fproof%23%2FUsers%2Fliaoyuchen%2FDeveloper%2Fhashcloak-noir%2Fsemaphore-noir%2Fpackages%2Fproof%3A%3Ahash%3Dfb90eb%26locator%3Dbrowser%2540workspace%253A.":
+"@zk-kit/artifacts@file:/Users/liaoyuchen/Developer/snark-artifacts/packages/artifacts::locator=%40semaphore-protocol%2Fproof%40file%3A%2FUsers%2Fliaoyuchen%2FDeveloper%2Fhashcloak-noir%2Fsemaphore-noir%2Fpackages%2Fproof%23%2FUsers%2Fliaoyuchen%2FDeveloper%2Fhashcloak-noir%2Fsemaphore-noir%2Fpackages%2Fproof%3A%3Ahash%3D5e3116%26locator%3Dbrowser%2540workspace%253A.":
   version: 2.0.1
-  resolution: "@zk-kit/artifacts@file:/Users/liaoyuchen/Developer/snark-artifacts/packages/artifacts#/Users/liaoyuchen/Developer/snark-artifacts/packages/artifacts::hash=7e8067&locator=%40semaphore-protocol%2Fproof%40file%3A%2FUsers%2Fliaoyuchen%2FDeveloper%2Fhashcloak-noir%2Fsemaphore-noir%2Fpackages%2Fproof%23%2FUsers%2Fliaoyuchen%2FDeveloper%2Fhashcloak-noir%2Fsemaphore-noir%2Fpackages%2Fproof%3A%3Ahash%3Dfb90eb%26locator%3Dbrowser%2540workspace%253A."
+  resolution: "@zk-kit/artifacts@file:/Users/liaoyuchen/Developer/snark-artifacts/packages/artifacts#/Users/liaoyuchen/Developer/snark-artifacts/packages/artifacts::hash=5e0262&locator=%40semaphore-protocol%2Fproof%40file%3A%2FUsers%2Fliaoyuchen%2FDeveloper%2Fhashcloak-noir%2Fsemaphore-noir%2Fpackages%2Fproof%23%2FUsers%2Fliaoyuchen%2FDeveloper%2Fhashcloak-noir%2Fsemaphore-noir%2Fpackages%2Fproof%3A%3Ahash%3D5e3116%26locator%3Dbrowser%2540workspace%253A."
   dependencies:
     "@commander-js/extra-typings": "npm:^12.1.0"
     "@inquirer/input": "npm:^2.1.8"
     "@inquirer/select": "npm:^2.3.4"
+    "@noir-lang/noir_js": "npm:1.0.0-beta.5"
     circomkit: "npm:^0.2.1"
     ora: "npm:^5.4.1"
     snarkjs: "npm:^0.7.4"
   bin:
     snarkli: ./dist/cli/index.js
-  checksum: 10/1482868623763fd3fafb056f684e0e25cdce28b1a5466b5a32ee805a548f7eef5d73152b258d8db4670baab5df9becda5485f69d05174cd3b1e9518c1daa35bd
+  checksum: 10/208d62845621300b6840b933e005df10420f929aae31c83a7102ccd955ca806e888dacdbc990e578442211c0e27fa7d89ffb359f5c65fcbeabe4f0070c4130a0
   languageName: node
   linkType: hard
 

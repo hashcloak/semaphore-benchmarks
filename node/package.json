@@ -14,11 +14,11 @@
     "typescript": "^5.6.3"
   },
   "dependencies": {
-    "@noir-lang/noir_js": "1.0.0-beta.3",
-    "@semaphore-protocol/core": "4.9.1",
-    "@semaphore-protocol/group": "4.9.1",
-    "@semaphore-protocol/identity": "4.9.1",
-    "@semaphore-protocol/proof": "file:<YOUR_PATH_TO>/semaphore-noir/packages/proof",
-    "@semaphore-protocol/noir-proof-batch": "file:<YOUR_PATH_TO>/semaphore-noir/packages/noir-proof-batch"
+    "@noir-lang/noir_js": "1.0.0-beta.5",
+    "@semaphore-protocol/core": "file:/Users/liaoyuchen/Developer/hashcloak-noir/semaphore-noir/packages/core",
+    "@semaphore-protocol/group": "file:/Users/liaoyuchen/Developer/hashcloak-noir/semaphore-noir/packages/group",
+    "@semaphore-protocol/identity": "file:/Users/liaoyuchen/Developer/hashcloak-noir/semaphore-noir/packages/identity",
+    "@semaphore-protocol/noir-proof-batch": "file:/Users/liaoyuchen/Developer/hashcloak-noir/semaphore-noir/packages/noir-proof-batch",
+    "@semaphore-protocol/proof": "file:/Users/liaoyuchen/Developer/hashcloak-noir/semaphore-noir/packages/proof"
   }
 }
