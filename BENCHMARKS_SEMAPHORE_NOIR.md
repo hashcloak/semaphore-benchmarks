@@ -99,7 +99,7 @@ Proof Verification Benches (keccak = true)
 |  Verify batch of 30  |    32   |     31        |    16   |
 |  Verify batch of 100 |    27   |     37        |    13   |
 
-#### Generat a single semaphore proof for batching
+#### Generate a single semaphore proof for batching
 
 | Function                                                          | ops/sec | Avg Time (ms)  | Samples |
 |-------------------------------------------------------------------|---------|----------------|---------|
@@ -234,8 +234,8 @@ Gatecounts from `gatecount`.
 
 | Function                                                              |Gas Usage|
 |-----------------------------------------------------------------------|---------|
-| SemaphoreNoir.validateBatchedProof 10 proofs  (100-member group)      |2675469  |
-| SemaphoreNoir.validateBatchedProof 20 proofs  (100-member group)      |3071935  |
-| SemaphoreNoir.validateBatchedProof 30 proofs  (100-member group)      |3539387  |
-| SemaphoreNoir.validateBatchedProof 50 proofs  (100-member group)      |4692466  |
-| SemaphoreNoir.validateBatchedProof 100 proofs (100-member group)      |8832033  |
+| SemaphoreNoir.validateBatchedProof 10 proofs  (100-member group)      |2689415  |
+| SemaphoreNoir.validateBatchedProof 20 proofs  (100-member group)      |3095601  |
+| SemaphoreNoir.validateBatchedProof 30 proofs  (100-member group)      |3572773  |
+| SemaphoreNoir.validateBatchedProof 50 proofs  (100-member group)      |4745292  |
+| SemaphoreNoir.validateBatchedProof 100 proofs (100-member group)      |8933459  |
