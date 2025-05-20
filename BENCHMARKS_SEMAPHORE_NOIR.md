@@ -84,10 +84,10 @@ yarn ts-node src/batching.ts
 Proof Generation Benches (keccak = true)
 |       Function         | ops/sec | Avg time (ms) | Samples |
 |------------------------|---------|---------------|---------|
-|  Generate batch of 10  |    0    |     96004     |    3    |
-|  Generate batch of 20  |    0    |     223294    |    3    |
-|  Generate batch of 30  |    0    |     355233    |    3    |
-|  Generate batch of 100 |    0    |     1233135   |    3    |
+|  Generate batch of 10  |    0    |     97064     |    3    |
+|  Generate batch of 20  |    0    |     214852    |    3    |
+|  Generate batch of 30  |    0    |     349871    |    3    |
+|  Generate batch of 100 |    0    |     1187020   |    3    |
 
 
 
@@ -95,9 +95,9 @@ Proof Verification Benches (keccak = true)
 |       Function       | ops/sec | Avg time (ms) | Samples |
 |----------------------|---------|---------------|---------|
 |  Verify batch of 10  |    22   |     46        |    11   |
-|  Verify batch of 20  |    26   |     38        |    14   |
-|  Verify batch of 30  |    31   |     32        |    16   |
-|  Verify batch of 100 |    25   |     40        |    13   |
+|  Verify batch of 20  |    32   |     32        |    14   |
+|  Verify batch of 30  |    32   |     31        |    16   |
+|  Verify batch of 100 |    27   |     37        |    13   |
 
 #### Generat a single semaphore proof for batching
 
@@ -212,6 +212,8 @@ Gatecounts from `gatecount`.
 
 #### Gas estimates
 
+##### Single proof
+
 | Function                                                        |Gas Usage|
 |-----------------------------------------------------------------|---------|
 | SemaphoreNoir.verifyProof 1 Member [Max tree depth 1]           |1856690  |
@@ -227,3 +229,13 @@ Gatecounts from `gatecount`.
 | SemaphoreNoir.validateProof 500 Members [Max tree depth 9]      |2028057  |
 | SemaphoreNoir.validateProof 1000 Members [Max tree depth 10]    |2028093  |
 | SemaphoreNoir.validateProof 2000 Members [Max tree depth 11]    |2059288  |
+
+### Batch proof
+
+| Function                                                              |Gas Usage|
+|-----------------------------------------------------------------------|---------|
+| SemaphoreNoir.validateBatchedProof 10 proofs  (100-member group)      |2675469  |
+| SemaphoreNoir.validateBatchedProof 20 proofs  (100-member group)      |3071935  |
+| SemaphoreNoir.validateBatchedProof 30 proofs  (100-member group)      |3539387  |
+| SemaphoreNoir.validateBatchedProof 50 proofs  (100-member group)      |4692466  |
+| SemaphoreNoir.validateBatchedProof 100 proofs (100-member group)      |8832033  |
